@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 import { 
   FileText, 
   Briefcase, 
@@ -13,10 +14,13 @@ import {
   ArrowRight,
   Target,
   Award,
-  Eye
+  Eye,
+  BarChart3
 } from "lucide-react";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   const stats = [
     {
       title: "Resume Score",
@@ -108,9 +112,30 @@ const Index = () => {
       <Header />
       <main className="p-6 space-y-8">
         {/* Header */}
-        <div className="space-y-2">
-          <h1 className="text-3xl font-bold text-luxury-charcoal">Welcome back, John</h1>
-          <p className="text-luxury-muted">Here's what's happening with your career journey today.</p>
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold text-luxury-charcoal">Welcome back, John</h1>
+            <p className="text-luxury-muted">Here's what's happening with your career journey today.</p>
+          </div>
+          
+          {/* Navigation Buttons */}
+          <div className="flex flex-wrap gap-3">
+            <Button 
+              onClick={() => navigate('/dashboard')}
+              className="flex items-center space-x-2"
+            >
+              <BarChart3 className="h-4 w-4" />
+              <span>Go to Dashboard</span>
+            </Button>
+            <Button 
+              variant="outline"
+              onClick={() => navigate('/builder')}
+              className="flex items-center space-x-2"
+            >
+              <FileText className="h-4 w-4" />
+              <span>Build Resume</span>
+            </Button>
+          </div>
         </div>
 
         {/* Stats Grid */}
