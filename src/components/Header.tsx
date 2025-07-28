@@ -31,6 +31,12 @@ const Header = () => {
             </a>
             <a
               className="transition-colors hover:text-foreground/80 text-foreground/60"
+              href="/about"
+            >
+              About
+            </a>
+            <a
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
               href="#pricing"
             >
               Pricing
@@ -47,11 +53,11 @@ const Header = () => {
             </div>
           </div>
           <nav className="flex items-center space-x-2">
-            <Button variant="ghost" size="sm">
-              Sign In
+            <Button variant="ghost" size="sm" asChild>
+              <a href="/auth/login">Sign In</a>
             </Button>
             <Button variant="hero" size="sm" asChild>
-              <a href="/builder">Get Started</a>
+              <a href="/auth/signup">Get Started</a>
             </Button>
           </nav>
         </div>
