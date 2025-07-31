@@ -37,6 +37,12 @@ const Header = () => {
             </a>
             <a
               className="transition-colors hover:text-foreground/80 text-foreground/60"
+              href="/contact"
+            >
+              Contact
+            </a>
+            <a
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
               href="#pricing"
             >
               Pricing
