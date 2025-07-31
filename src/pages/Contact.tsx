@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Twitter, Linkedin, Facebook, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -38,15 +38,25 @@ const Contact = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-luxury bg-clip-text text-transparent">
-            Get in Touch
-          </h1>
-          <p className="text-xl text-luxury-muted mb-8 max-w-2xl mx-auto">
-            Have questions about CareerAI? We're here to help you succeed in your career journey.
-          </p>
+      <section className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
+        <div className="container mx-auto text-center max-w-4xl relative z-10">
+          <div className="animate-fade-in">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-luxury bg-clip-text text-transparent">
+              Get in Touch
+            </h1>
+            <p className="text-xl text-luxury-muted mb-8 max-w-2xl mx-auto">
+              Have questions about CareerAI? We're here to help you succeed in your career journey.
+            </p>
+            <div className="flex justify-center items-center space-x-2 text-luxury-muted">
+              <MessageCircle className="h-5 w-5" />
+              <span>We typically respond within 2 hours</span>
+            </div>
+          </div>
         </div>
+        {/* Floating decorative elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-luxury rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-10 right-20 w-16 h-16 bg-gradient-to-r from-accent to-primary rounded-full opacity-20 animate-pulse delay-1000"></div>
       </section>
 
       {/* Contact Section */}
@@ -56,49 +66,86 @@ const Contact = () => {
             
             {/* Contact Info */}
             <div className="lg:col-span-1 space-y-6">
-              <Card className="bg-white/80 backdrop-blur border-luxury-border shadow-luxury">
+              <Card className="bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-luxury-charcoal">Contact Information</CardTitle>
+                  <CardTitle className="text-luxury-charcoal flex items-center space-x-2">
+                    <MessageCircle className="h-5 w-5 text-primary" />
+                    <span>Contact Information</span>
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="flex items-center space-x-3">
-                    <div className="p-2 bg-gradient-luxury rounded-lg">
+                  <div className="flex items-center space-x-3 group cursor-pointer p-3 rounded-lg hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 transition-all duration-300">
+                    <div className="p-2 bg-gradient-luxury rounded-lg group-hover:scale-110 transition-transform duration-300">
                       <Mail className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <p className="font-medium text-luxury-charcoal">Email</p>
-                      <p className="text-luxury-muted">support@careerai.com</p>
+                      <p className="text-luxury-muted group-hover:text-primary transition-colors">support@careerai.com</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-center space-x-3">
-                    <div className="p-2 bg-gradient-luxury rounded-lg">
+                  <div className="flex items-center space-x-3 group cursor-pointer p-3 rounded-lg hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 transition-all duration-300">
+                    <div className="p-2 bg-gradient-luxury rounded-lg group-hover:scale-110 transition-transform duration-300">
                       <Phone className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <p className="font-medium text-luxury-charcoal">Phone</p>
-                      <p className="text-luxury-muted">+1 (555) 123-4567</p>
+                      <p className="text-luxury-muted group-hover:text-primary transition-colors">+1 (555) 123-4567</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-center space-x-3">
-                    <div className="p-2 bg-gradient-luxury rounded-lg">
+                  <div className="flex items-center space-x-3 group cursor-pointer p-3 rounded-lg hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 transition-all duration-300">
+                    <div className="p-2 bg-gradient-luxury rounded-lg group-hover:scale-110 transition-transform duration-300">
                       <MapPin className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <p className="font-medium text-luxury-charcoal">Office</p>
-                      <p className="text-luxury-muted">123 Innovation Drive<br />San Francisco, CA 94105</p>
+                      <p className="text-luxury-muted group-hover:text-primary transition-colors">123 Innovation Drive<br />San Francisco, CA 94105</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-center space-x-3">
-                    <div className="p-2 bg-gradient-luxury rounded-lg">
+                  <div className="flex items-center space-x-3 group cursor-pointer p-3 rounded-lg hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 transition-all duration-300">
+                    <div className="p-2 bg-gradient-luxury rounded-lg group-hover:scale-110 transition-transform duration-300">
                       <Clock className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <p className="font-medium text-luxury-charcoal">Business Hours</p>
-                      <p className="text-luxury-muted">Mon - Fri: 9:00 AM - 6:00 PM PST</p>
+                      <p className="text-luxury-muted group-hover:text-primary transition-colors">Mon - Fri: 9:00 AM - 6:00 PM PST</p>
                     </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Social Media Card */}
+              <Card className="bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300">
+                <CardHeader>
+                  <CardTitle className="text-luxury-charcoal">Follow Us</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex justify-center space-x-4">
+                    <div className="p-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
+                      <Twitter className="h-5 w-5 text-white" />
+                    </div>
+                    <div className="p-3 bg-gradient-to-r from-blue-700 to-blue-800 rounded-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
+                      <Linkedin className="h-5 w-5 text-white" />
+                    </div>
+                    <div className="p-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
+                      <Facebook className="h-5 w-5 text-white" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Quick Stats Card */}
+              <Card className="bg-gradient-to-r from-primary/10 to-accent/10 backdrop-blur border-luxury-border shadow-luxury">
+                <CardContent className="pt-6">
+                  <div className="text-center space-y-2">
+                    <div className="flex justify-center">
+                      <Star className="h-8 w-8 text-yellow-500 fill-current" />
+                    </div>
+                    <h3 className="font-bold text-luxury-charcoal">Customer Satisfaction</h3>
+                    <p className="text-2xl font-bold text-primary">98%</p>
+                    <p className="text-sm text-luxury-muted">Based on 10,000+ reviews</p>
                   </div>
                 </CardContent>
               </Card>
@@ -163,7 +210,8 @@ const Contact = () => {
                       />
                     </div>
                     
-                    <Button type="submit" className="w-full bg-gradient-luxury text-white">
+                    <Button type="submit" className="w-full bg-gradient-luxury text-white hover-scale group">
+                      <Send className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                       Send Message
                     </Button>
                   </form>
@@ -171,6 +219,42 @@ const Contact = () => {
               </Card>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-luxury-charcoal mb-4">
+              Visit Our Office
+            </h2>
+            <p className="text-luxury-muted">
+              Come see us in the heart of San Francisco's innovation district
+            </p>
+          </div>
+          
+          <Card className="bg-white/80 backdrop-blur border-luxury-border shadow-luxury overflow-hidden">
+            <CardContent className="p-0">
+              <div className="relative h-96 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <div className="text-center space-y-4">
+                  <MapPin className="h-16 w-16 text-primary mx-auto" />
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold text-luxury-charcoal">CareerAI Headquarters</h3>
+                    <p className="text-luxury-muted">123 Innovation Drive</p>
+                    <p className="text-luxury-muted">San Francisco, CA 94105</p>
+                  </div>
+                  <Button className="bg-gradient-luxury text-white hover-scale">
+                    Get Directions
+                  </Button>
+                </div>
+                {/* Decorative elements */}
+                <div className="absolute top-4 left-4 w-8 h-8 bg-primary/20 rounded-full animate-pulse"></div>
+                <div className="absolute bottom-4 right-4 w-12 h-12 bg-accent/20 rounded-full animate-pulse delay-500"></div>
+                <div className="absolute top-1/2 left-8 w-6 h-6 bg-gradient-luxury rounded-full animate-pulse delay-1000"></div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -187,33 +271,33 @@ const Contact = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-luxury-charcoal">How does CareerAI work?</h3>
+            <Card className="p-6 bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300">
+              <h3 className="text-lg font-semibold text-luxury-charcoal mb-3">How does CareerAI work?</h3>
               <p className="text-luxury-muted">
                 CareerAI uses advanced AI to help you create professional resumes, optimize your job search, and improve your career prospects.
               </p>
-            </div>
+            </Card>
             
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-luxury-charcoal">Is my data secure?</h3>
+            <Card className="p-6 bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300">
+              <h3 className="text-lg font-semibold text-luxury-charcoal mb-3">Is my data secure?</h3>
               <p className="text-luxury-muted">
                 Yes, we use enterprise-grade security to protect your personal information and career data.
               </p>
-            </div>
+            </Card>
             
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-luxury-charcoal">Can I cancel anytime?</h3>
+            <Card className="p-6 bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300">
+              <h3 className="text-lg font-semibold text-luxury-charcoal mb-3">Can I cancel anytime?</h3>
               <p className="text-luxury-muted">
                 Absolutely. You can cancel your subscription at any time with no hidden fees or penalties.
               </p>
-            </div>
+            </Card>
             
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-luxury-charcoal">Do you offer support?</h3>
+            <Card className="p-6 bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300">
+              <h3 className="text-lg font-semibold text-luxury-charcoal mb-3">Do you offer support?</h3>
               <p className="text-luxury-muted">
                 Yes, we provide 24/7 customer support to help you succeed in your career journey.
               </p>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
