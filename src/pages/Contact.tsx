@@ -222,81 +222,104 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-luxury-charcoal mb-4">
-              Visit Our Office
-            </h2>
-            <p className="text-luxury-muted">
-              Come see us in the heart of San Francisco's innovation district
-            </p>
-          </div>
-          
-          <Card className="bg-white/80 backdrop-blur border-luxury-border shadow-luxury overflow-hidden">
-            <CardContent className="p-0">
-              <div className="relative h-96 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <MapPin className="h-16 w-16 text-primary mx-auto" />
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-luxury-charcoal">CareerAI Headquarters</h3>
-                    <p className="text-luxury-muted">123 Innovation Drive</p>
-                    <p className="text-luxury-muted">San Francisco, CA 94105</p>
-                  </div>
-                  <Button className="bg-gradient-luxury text-white hover-scale">
-                    Get Directions
-                  </Button>
-                </div>
-                {/* Decorative elements */}
-                <div className="absolute top-4 left-4 w-8 h-8 bg-primary/20 rounded-full animate-pulse"></div>
-                <div className="absolute bottom-4 right-4 w-12 h-12 bg-accent/20 rounded-full animate-pulse delay-500"></div>
-                <div className="absolute top-1/2 left-8 w-6 h-6 bg-gradient-luxury rounded-full animate-pulse delay-1000"></div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       {/* FAQ Section */}
-      <section className="py-16 px-4 bg-white/50">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
+      <section className="py-16 px-4 bg-gradient-to-br from-white/50 to-primary/5 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="text-center mb-12 animate-fade-in">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-luxury rounded-full mb-4">
+              <MessageCircle className="h-8 w-8 text-white" />
+            </div>
             <h2 className="text-3xl font-bold text-luxury-charcoal mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-luxury-muted">
-              Quick answers to common questions about CareerAI
+            <p className="text-luxury-muted max-w-2xl mx-auto">
+              Quick answers to common questions about CareerAI. Can't find what you're looking for? Feel free to reach out!
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="p-6 bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300">
-              <h3 className="text-lg font-semibold text-luxury-charcoal mb-3">How does CareerAI work?</h3>
-              <p className="text-luxury-muted">
-                CareerAI uses advanced AI to help you create professional resumes, optimize your job search, and improve your career prospects.
-              </p>
+            <Card className="p-6 bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="p-2 bg-gradient-luxury rounded-lg group-hover:scale-110 transition-transform duration-300">
+                    <Star className="h-4 w-4 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-luxury-charcoal">How does CareerAI work?</h3>
+                </div>
+                <p className="text-luxury-muted group-hover:text-luxury-charcoal transition-colors duration-300">
+                  CareerAI uses advanced AI to help you create professional resumes, optimize your job search, and improve your career prospects.
+                </p>
+              </div>
             </Card>
             
-            <Card className="p-6 bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300">
-              <h3 className="text-lg font-semibold text-luxury-charcoal mb-3">Is my data secure?</h3>
-              <p className="text-luxury-muted">
-                Yes, we use enterprise-grade security to protect your personal information and career data.
-              </p>
+            <Card className="p-6 bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="p-2 bg-gradient-luxury rounded-lg group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="h-4 w-4 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-luxury-charcoal">Is my data secure?</h3>
+                </div>
+                <p className="text-luxury-muted group-hover:text-luxury-charcoal transition-colors duration-300">
+                  Yes, we use enterprise-grade security to protect your personal information and career data.
+                </p>
+              </div>
             </Card>
             
-            <Card className="p-6 bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300">
-              <h3 className="text-lg font-semibold text-luxury-charcoal mb-3">Can I cancel anytime?</h3>
-              <p className="text-luxury-muted">
-                Absolutely. You can cancel your subscription at any time with no hidden fees or penalties.
-              </p>
+            <Card className="p-6 bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="p-2 bg-gradient-luxury rounded-lg group-hover:scale-110 transition-transform duration-300">
+                    <Clock className="h-4 w-4 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-luxury-charcoal">Can I cancel anytime?</h3>
+                </div>
+                <p className="text-luxury-muted group-hover:text-luxury-charcoal transition-colors duration-300">
+                  Absolutely. You can cancel your subscription at any time with no hidden fees or penalties.
+                </p>
+              </div>
             </Card>
             
-            <Card className="p-6 bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300">
-              <h3 className="text-lg font-semibold text-luxury-charcoal mb-3">Do you offer support?</h3>
-              <p className="text-luxury-muted">
-                Yes, we provide 24/7 customer support to help you succeed in your career journey.
-              </p>
+            <Card className="p-6 bg-white/80 backdrop-blur border-luxury-border shadow-luxury hover-scale transition-all duration-300 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="p-2 bg-gradient-luxury rounded-lg group-hover:scale-110 transition-transform duration-300">
+                    <Phone className="h-4 w-4 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-luxury-charcoal">Do you offer support?</h3>
+                </div>
+                <p className="text-luxury-muted group-hover:text-luxury-charcoal transition-colors duration-300">
+                  Yes, we provide 24/7 customer support to help you succeed in your career journey.
+                </p>
+              </div>
+            </Card>
+          </div>
+          
+          {/* Additional CTA section */}
+          <div className="mt-12 text-center">
+            <Card className="p-8 bg-gradient-to-r from-primary/10 to-accent/10 backdrop-blur border-luxury-border shadow-luxury">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-luxury-charcoal">Still have questions?</h3>
+                <p className="text-luxury-muted">Our support team is here to help you 24/7</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button className="bg-gradient-luxury text-white hover-scale group">
+                    <MessageCircle className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+                    Start Live Chat
+                  </Button>
+                  <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white hover-scale">
+                    <Phone className="h-4 w-4 mr-2" />
+                    Schedule a Call
+                  </Button>
+                </div>
+              </div>
             </Card>
           </div>
         </div>
